@@ -1,0 +1,216 @@
+/* *
+ * Basic stylesheet for https://insomnux.github.io/html-tags-dummy/
+ * Last updated: 24/11/2017
+ * Source: https://github.com/insomnux/html-tags-dummy
+ * */
+
+/* === Borderboxing === */
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  /* ~~ if things go/look/feel funky or if you really like red borders
+   * uncomment this: ~~ */
+  /*
+  border: red 1px solid;
+   */
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+  display: block;
+}
+
+/* <!-- END Borderboxing --> */
+
+/* === Basic === */
+
+html {
+  font-size: 62.5%;
+}
+
+body{
+  color: #444;
+  font-family: "Helvetica", "Liberation Sans", sans-serif;
+  font-size: 1.6em;
+  font-weight: 300;
+  letter-spacing: .01em;
+  line-height: 1.6;
+  padding: 1em 2em;
+}
+
+/* <!-- END Basic --> */
+
+/* === Page-specific styling === */
+
+.section_title {
+  border-top: #c2c2c2 solid 1px;
+  color: #000;
+  margin-top: 1rem;
+  padding: 0.5rem 0.2rem 0 0;
+}
+
+section h4 {
+  border-left: #c2c2c2 solid 2px;
+  padding-left: 0.5rem;
+}
+
+#_headings h4 {
+  border: none;
+  padding: inherit;
+}
+
+/* <!-- END Page-specific styling --> */
+
+/* === Headings and text === */
+
+h1 {font-size: 2.8rem;}
+h2 {font-size: 2.4rem;}
+h3 {font-size: 2.2rem;}
+h4 {font-size: 2.0rem;}
+h5 {font-size: 1.6rem;}
+h6 {font-size: 1.4rem;}
+
+/* <!-- END Headings --> */
+
+/* === Block elements === */
+
+p {font-size: 16px;}
+
+/* Quotes */
+
+blockquote, q {
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+blockquote {
+  background-color: #D1D0CE;
+  border-left: solid 3px #625D5D;
+  padding-left: 10px;
+  margin: 1rem 0 1.5rem 3rem;
+  max-width: 85%;
+  quotes: none;  
+}
+
+/* Pre and code */
+code, pre, kbd, samp {
+  font-family: "Lucida Console", Monaco, monospace;
+  line-height: 1.4;
+}
+code, kbd, samp {
+  padding: 2px 4px;
+}
+code, pre {
+  background-color: #edeaea;
+  color: #bd4147;
+}
+pre {
+  border: solid 1px #000;
+  padding: 1rem 2rem;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+hr {
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 0;
+  height: 1px;
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+/* <!-- END Block elements --> */
+
+/* === Lists === */
+
+/* Keep browser defaults for ul and ol */
+dl {
+  margin-bottom: 1em;
+}
+dt {
+  font-weight: bold;
+}
+dd {
+  font-size: smaller;
+  font-style: italic;
+  margin-bottom: 1em;
+}
+
+abbr[title], acronym[title] {
+  border-bottom: 1px dotted #2b2b2b;
+  cursor: help;
+  text-decoration: none;
+}
+
+/* <!-- END Lists --> */
+
+/* === Tables === */
+
+table {
+  border-collapse: collapse;
+  width: 90%;
+}
+
+th, td {
+  text-align: left;
+}
+
+tr:nth-child(even) {
+  background-color: #daecff;
+}
+thead, tfoot {
+  font-weight: 600;
+}
+
+/* <!-- END Tables --> */
+
+/* === Text Markup === */
+
+b, strong {font-weight: 600;}
+cite, dfn, em, i {font-style: italic;}
+em > em {font-size: 1.1em;}
+address {
+  border-left: #ccc solid 1px;
+  color: #232323;
+  font-style: italic;
+  margin: auto auto 0.5rem 0.5rem;
+  padding-left: 0.5rem;
+}
+abbr[title], acronym[title] {
+  border-bottom: 1px dotted #2b2b2b;
+  cursor: help;
+  text-decoration: none;
+}
+mark, ins {
+  background: #edcc9c;
+  padding: 2px 3px;
+  text-decoration: none;
+}
+
+/* <!-- END Text Markup --> */
+
+/* === Forms === */
+
+input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="tel"], textarea {
+  display: block;
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
+  padding: 0.1rem 0.2rem;
+}
+input[type="submit"], input[type="reset"], input[type="date"], input[type="color"], label {
+  display: inline-block;
+  padding: 0.1rem 0.2rem;
+}
+
+/* <!-- END Forms --> */
