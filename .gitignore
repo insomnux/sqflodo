@@ -1,0 +1,19 @@
+# Tarballs
+*.gz
+*.bz2
+*.xz
+*.tgz
+*.txz
+*.zip
+
+# Backup files
+*.swp
+*.un~
+
+# Flask dir
+flask
+__pycache__
+flask_session
+
+# database
+tasks.db
