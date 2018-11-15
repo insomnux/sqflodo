@@ -9,7 +9,7 @@
     <label for "add_new_task" style="display: none;">Add a new task</label>
     <input autofocus="autofocus" autocomplete="off" placeholder="Add a new task..." required="required" type="text" value="" name="task[newtask]" id="add_new_task" />
     <label for="duedate">Todo before: </label>
-    <input type="date" name="task[duedate]" value="" id="duedate" />
+    <input type="date" name="task[duedate]" value="" id="duedate" required="required" />
     <input type="submit" name="commit" value="Add" data-disable-with="Add" />
   </form>
 </section>
@@ -17,9 +17,9 @@
 <section>
   <h3> Current tasks </h3>
   <article>
-    {% for task, taskdate in taskdict %}
-      <p class="task_text">&#10143; {{ task }}</p>
-      <p class="task_meta">Due date: <strong>{{ taskdate }}</strong> | <em>Mark as complete</em></p>
+    {% for mytask in mytasks %}
+      <p class="task_text">&#10143; {{ mytask.tdtask }}</p>
+      <p class="task_meta">Due date: <strong>{{ mytask.lastday }}</strong> | <em>Mark as complete</em></p>
     {% endfor %}
   </article>
 </section>
