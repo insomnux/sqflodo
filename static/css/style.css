@@ -1,0 +1,98 @@
+/* *
+ * Basic stylesheet for https://insomnux.github.io/html-tags-dummy/
+ * Last updated: 24/11/2017
+ * Source: https://github.com/insomnux/html-tags-dummy
+ * */
+
+/* === Borderboxing === */
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  /* ~~ if things go/look/feel funky or if you really like red borders
+   * uncomment this: ~~ */
+  /*
+  border: red 1px solid;
+   */
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+  display: block;
+}
+
+/* <!-- END Borderboxing --> */
+
+/* === Basic === */
+
+html {
+  font-size: 62.5%;
+}
+
+body{
+  color: #444;
+  font-family: "Helvetica", "Liberation Sans", sans-serif;
+  font-size: 1.6em;
+  font-weight: 300;
+  letter-spacing: .01em;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* <!-- END Basic --> */
+
+/* === Headings and text === */
+
+h1 {font-size: 2.8rem;}
+h2 {font-size: 2.4rem;}
+h3 {font-size: 2.2rem;}
+h4 {font-size: 2.0rem;}
+h5 {font-size: 1.6rem;}
+h6 {font-size: 1.4rem;}
+p {font-size: 16px;}
+
+/* Text markup */
+b, strong {font-weight: 600;}
+
+/* <!-- END Headings and text --> */
+
+/* === Forms === */
+
+input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="tel"], textarea {
+  display: block;
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
+  padding: 0.1rem 0.2rem;
+}
+input[type="submit"], input[type="reset"], input[type="date"], input[type="color"], label {
+  display: inline-block;
+  padding: 0.1rem 0.2rem;
+}
+
+/* <!-- END Forms --> */
+
+/* === Page styling === */
+
+header {
+  padding: 0.6rem 4rem;
+}
+
+main {
+  padding: 0.4rem 4rem;
+}
+
+.task_text, .task_meta {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.task_text {
+  font-size: 125%;
+}
+.task_meta {
+  font-size: 75%;
+}
+
+
+/* <!-- END Page styling --> */
+
