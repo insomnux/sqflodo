@@ -36,7 +36,7 @@ quit()
 3. Start the application:
 
 ```sh
-python sqflodo
+python sqflodo.py
 ```
 
 and browse to [localhost:5000](http://localhost:5000)
