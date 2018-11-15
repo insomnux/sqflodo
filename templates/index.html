@@ -5,7 +5,7 @@
 {%block content %}
 <section class="newtask">
   <h2> Add a new task </h2>
-  <form id="new_task" action="/new" accept-charset="UTF-8" method="post">
+  <form id="new_task" action="{{ url_for('index') }}" accept-charset="UTF-8" method="post">
     <label for "add_new_task" style="display: none;">Add a new task</label>
     <input autofocus="autofocus" autocomplete="off" placeholder="Add a new task..." required="required" type="text" value="" name="task[newtask]" id="add_new_task" />
     <label for="duedate">Todo before: </label>
