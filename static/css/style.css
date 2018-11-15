@@ -36,31 +36,11 @@ body{
   font-weight: 300;
   letter-spacing: .01em;
   line-height: 1.6;
-  padding: 1em 2em;
+  margin: 0;
+  padding: 0;
 }
 
 /* <!-- END Basic --> */
-
-/* === Page-specific styling === */
-
-.section_title {
-  border-top: #c2c2c2 solid 1px;
-  color: #000;
-  margin-top: 1rem;
-  padding: 0.5rem 0.2rem 0 0;
-}
-
-section h4 {
-  border-left: #c2c2c2 solid 2px;
-  padding-left: 0.5rem;
-}
-
-#_headings h4 {
-  border: none;
-  padding: inherit;
-}
-
-/* <!-- END Page-specific styling --> */
 
 /* === Headings and text === */
 
@@ -70,135 +50,12 @@ h3 {font-size: 2.2rem;}
 h4 {font-size: 2.0rem;}
 h5 {font-size: 1.6rem;}
 h6 {font-size: 1.4rem;}
-
-/* <!-- END Headings --> */
-
-/* === Block elements === */
-
 p {font-size: 16px;}
 
-/* Quotes */
-
-blockquote, q {
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  -ms-hyphens: none;
-  hyphens: none;
-}
-
-blockquote:before, blockquote:after, q:before, q:after {
-  content: "";
-  content: none;
-}
-
-blockquote {
-  background-color: #D1D0CE;
-  border-left: solid 3px #625D5D;
-  padding-left: 10px;
-  margin: 1rem 0 1.5rem 3rem;
-  max-width: 85%;
-  quotes: none;  
-}
-
-/* Pre and code */
-code, pre, kbd, samp {
-  font-family: "Lucida Console", Monaco, monospace;
-  line-height: 1.4;
-}
-code, kbd, samp {
-  padding: 2px 4px;
-}
-code, pre {
-  background-color: #edeaea;
-  color: #bd4147;
-}
-pre {
-  border: solid 1px #000;
-  padding: 1rem 2rem;
-  white-space: -moz-pre-wrap;
-  white-space: -pre-wrap;
-  white-space: -o-pre-wrap;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-}
-
-hr {
-  background-color: rgba(0, 0, 0, 0.4);
-  border: 0;
-  height: 1px;
-  margin-bottom: 1.5rem;
-  margin-top: 1.5rem;
-}
-
-/* <!-- END Block elements --> */
-
-/* === Lists === */
-
-/* Keep browser defaults for ul and ol */
-dl {
-  margin-bottom: 1em;
-}
-dt {
-  font-weight: bold;
-}
-dd {
-  font-size: smaller;
-  font-style: italic;
-  margin-bottom: 1em;
-}
-
-abbr[title], acronym[title] {
-  border-bottom: 1px dotted #2b2b2b;
-  cursor: help;
-  text-decoration: none;
-}
-
-/* <!-- END Lists --> */
-
-/* === Tables === */
-
-table {
-  border-collapse: collapse;
-  width: 90%;
-}
-
-th, td {
-  text-align: left;
-}
-
-tr:nth-child(even) {
-  background-color: #daecff;
-}
-thead, tfoot {
-  font-weight: 600;
-}
-
-/* <!-- END Tables --> */
-
-/* === Text Markup === */
-
+/* Text markup */
 b, strong {font-weight: 600;}
-cite, dfn, em, i {font-style: italic;}
-em > em {font-size: 1.1em;}
-address {
-  border-left: #ccc solid 1px;
-  color: #232323;
-  font-style: italic;
-  margin: auto auto 0.5rem 0.5rem;
-  padding-left: 0.5rem;
-}
-abbr[title], acronym[title] {
-  border-bottom: 1px dotted #2b2b2b;
-  cursor: help;
-  text-decoration: none;
-}
-mark, ins {
-  background: #edcc9c;
-  padding: 2px 3px;
-  text-decoration: none;
-}
 
-/* <!-- END Text Markup --> */
+/* <!-- END Headings and text --> */
 
 /* === Forms === */
 
@@ -214,3 +71,28 @@ input[type="submit"], input[type="reset"], input[type="date"], input[type="color
 }
 
 /* <!-- END Forms --> */
+
+/* === Page styling === */
+
+header {
+  padding: 0.6rem 4rem;
+}
+
+main {
+  padding: 0.4rem 4rem;
+}
+
+.task_text, .task_meta {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.task_text {
+  font-size: 125%;
+}
+.task_meta {
+  font-size: 75%;
+}
+
+
+/* <!-- END Page styling --> */
+
