@@ -2,40 +2,31 @@ import os.path, datetime
 from flask import Flask, render_template, request, url_for
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import Column, Integer, String, Date, Boolean, create_engine
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
 
 app = Flask(__name__)
+db_path = os.path.join(os.path.dirname(__file__), "tasks.db")
+db_uri = "sqlite:///{}".format(db_path)
+app.config["SQLALCHEMY_DATABASE_URI"] = db_uri
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+db = SQLAlchemy(app)
 
-tasklist = []
 
 # Models
-Base = declarative_base()
 
 def _get_date():
     return datetime.datetime.now()
 
-class Tasks(Base):
-    __tablename__ = "tasks"
-    key = Column(Integer, primary_key=True)
-    tdtask = Column(String(160), nullable=False)
-    createdday = Column(Date, default=_get_date)
-    lastday = Column(Date, default=_get_date)
-    complete = Column(Boolean, default=False)
-
-# Create database engine
-db_path = os.path.join(os.path.dirname(__file__), "tasks.db")
-db_uri = "sqlite:///{}".format(db_path)
-engine = create_engine(db_uri)
-Base.metadata.create_all(engine)
-
-Session = sessionmaker(bind=engine)
-session = Session()
+class Tasks(db.Model):
+    key = db.Column(db.Integer, primary_key=True)
+    tdtask = db.Column(db.String(160), nullable=False)
+    createdday = db.Column(db.Date, default=datetime.datetime.utcnow)
+    lastday = db.Column(db.Date, default=datetime.datetime.utcnow)
+    complete = db.Column(db.Boolean, default=False)
 
 # Views
 @app.route("/", methods=["GET", "POST"])
 def index():
-    alltasks = session.query(Tasks).all()
+    alltasks = db.session.query(Tasks).all()
     if request.method == "POST":
         newtask = request.form.get("task[newtask]")
 
@@ -48,25 +39,11 @@ def index():
         #duedate = Tasks(lastday=duedatedateobj)
 
         row = Tasks(tdtask=newtask,lastday=duedate,complete=False)
-        session.add(row)
+        db.session.add(row)
             
-        session.commit()
+        db.session.commit()
             
     return render_template("index.html", mytasks = alltasks)
-
-
-    '''
-    if request.method == "POST":      
-        newtask = request.form.get("task[newtask]")
-        duedate = request.form.get("task[duedate]")
-        tasklist.append([newtask, duedate])
-        taskdict = dict(tasklist)
-    else:
-        tasklist.clear()
-        taskdict = {}
-
-    return render_template("index.html", taskdict = taskdict.items())
-    '''
 
 
 if __name__ == "__main__":
