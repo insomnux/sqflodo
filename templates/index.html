@@ -6,10 +6,11 @@
 <section class="newtask">
   <h2> Add a new task </h2>
   <form id="new_task" action="{{ url_for('index') }}" accept-charset="UTF-8" method="post">
+    {{ atform.csrf_token }}
     <label for "add_new_task" style="display: none;">Add a new task</label>
-    <input autofocus="autofocus" autocomplete="off" placeholder="Add a new task..." required="required" type="text" value="" name="newtask" id="add_new_task" />
+    {{ atform.newtask }}
     <label for="duedate">Todo before: </label>
-    <input type="date" name="duedate" value="" id="duedate" required="required" />
+    {{ atform.duedate }}
     <input type="submit" name="commit" value="Add" data-disable-with="Add" />
   </form>
   <hr />
