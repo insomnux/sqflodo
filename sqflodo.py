@@ -37,7 +37,13 @@ def index():
         duedate_date = int(task_duedate[8:10])
         duedate = datetime.datetime(duedate_year,duedate_month,duedate_date)
 
-        row = Tasks(tdtask=newtask,lastday=duedate,complete=False)
+        # Check if completed
+        checkcomplete = request.form.get("iscomplete")
+        if checkcomplete:
+            return
+
+
+        row = Tasks(tdtask=newtask,lastday=duedate,complete=checkcomplete)
         db.session.add(row)
             
         db.session.commit()
