@@ -28,15 +28,14 @@ class Tasks(db.Model):
 def index():
     alltasks = db.session.query(Tasks).all()
     if request.method == "POST":
-        newtask = request.form.get("task[newtask]")
+        newtask = request.form.get("newtask")
 
         # Format ISO date from HTML to Python date object:
-        task_duedate = request.form.get("task[duedate]")
+        task_duedate = request.form.get("duedate")
         duedate_year = int(task_duedate[:4])
         duedate_month = int(task_duedate[5:7])
         duedate_date = int(task_duedate[8:10])
         duedate = datetime.datetime(duedate_year,duedate_month,duedate_date)
-        #duedate = Tasks(lastday=duedatedateobj)
 
         row = Tasks(tdtask=newtask,lastday=duedate,complete=False)
         db.session.add(row)

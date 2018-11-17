@@ -55,19 +55,30 @@ p {font-size: 16px;}
 /* Text markup */
 b, strong {font-weight: 600;}
 
+/* Block elements */
+hr {
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 0;
+  height: 1px;
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+}
+
 /* <!-- END Headings and text --> */
 
 /* === Forms === */
 
-input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="tel"], textarea {
+input[type="text"] {
   display: block;
   margin-top: 0.2rem;
   margin-bottom: 0.2rem;
   padding: 0.1rem 0.2rem;
 }
-input[type="submit"], input[type="reset"], input[type="date"], input[type="color"], label {
-  display: inline-block;
+input[type="submit"], input[type="reset"],  label {
   padding: 0.1rem 0.2rem;
+}
+input[type="date"] {
+  padding: .5rem;;
 }
 
 /* <!-- END Forms --> */
@@ -90,9 +101,14 @@ main {
   font-size: 125%;
 }
 .task_meta {
+  display: flex;
+  align-items: center;
   font-size: 75%;
 }
-
+.task_meta > input[type="checkbox"] {
+  margin-left: 1rem;
+  margin-right: .4rem;
+}
 
 /* <!-- END Page styling --> */
 
