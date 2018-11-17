@@ -1,6 +1,6 @@
 /* *
- * Basic stylesheet for https://insomnux.github.io/html-tags-dummy/
- * Last updated: 24/11/2017
+ * Basic stylesheet
+ * Last updated: 16/11/2018
  * Source: https://github.com/insomnux/html-tags-dummy
  * */
 
@@ -17,17 +17,13 @@
    */
 }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
-  display: block;
-}
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {display: block;}
 
 /* <!-- END Borderboxing --> */
 
 /* === Basic === */
 
-html {
-  font-size: 62.5%;
-}
+html {font-size: 62.5%;}
 
 body{
   color: #444;
@@ -74,32 +70,22 @@ input[type="text"] {
   margin-bottom: 0.2rem;
   padding: 0.1rem 0.2rem;
 }
-input[type="submit"], input[type="reset"],  label {
-  padding: 0.1rem 0.2rem;
-}
-input[type="date"] {
-  padding: .5rem;;
-}
+input[type="submit"], input[type="reset"],  label {padding: 0.1rem 0.2rem;}
+input[type="date"] {padding: .5rem;}
 
 /* <!-- END Forms --> */
 
 /* === Page styling === */
 
-header {
-  padding: 0.6rem 4rem;
-}
+header {padding: 0.6rem 4rem;}
 
-main {
-  padding: 0.4rem 4rem;
-}
+main {padding: 0.4rem 4rem;}
 
 .task_text, .task_meta {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
-.task_text {
-  font-size: 125%;
-}
+.task_text {font-size: 125%;}
 .task_meta {
   display: flex;
   align-items: center;
@@ -108,6 +94,7 @@ main {
 .task_meta > input[type="checkbox"] {
   margin-left: 1rem;
   margin-right: .4rem;
+  margin-top: 0;
 }
 
 /* <!-- END Page styling --> */
