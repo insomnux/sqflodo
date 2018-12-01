@@ -6,6 +6,8 @@ from wtforms.fields.html5 import DateField
 from wtforms.validators import DataRequired
 from sqflodo import db
 
+db.create_all()
+
 class Tasks(db.Model):
     key = db.Column(db.Integer, primary_key=True)
     tdtask = db.Column(db.String(160), nullable=False)

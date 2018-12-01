@@ -9,6 +9,7 @@
 # Backup files
 *.swp
 *.un~
+*.pyc
 
 # Flask dir
 flask
