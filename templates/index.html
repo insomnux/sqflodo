@@ -18,10 +18,12 @@
 
 <section>
   <h3> Current tasks </h3>
+  {{ message }}
   <article>
     {% for mytask in mytasks %}
       <p class="task_text">&#10143; {{ mytask.tdtask }}</p>
-      <p class="task_meta">Due date: <strong>{{ mytask.lastday }}</strong> | <input type="checkbox" name="iscomplete" /><em>Mark as complete</em></p>
+      <p class="task_meta">Due date: <strong>{{ mytask.lastday }}</strong> |
+      {% if mytask.complete == false %} <input type="checkbox" name="iscomplete" onclick='window.location.assign("{{ url_for("done", id=mytask.key) }}")'/><em>Mark as complete</em>{% else %}<em>Task completed</em>{% endif %}</p>
     {% endfor %}
   </article>
 </section>
