@@ -1,5 +1,5 @@
 import os.path, datetime
-from flask import Flask, render_template, request, url_for
+from flask import Flask, render_template, redirect, request, url_for
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import Column, Integer, String, Date, Boolean, create_engine
 from models import *
@@ -7,8 +7,6 @@ from models import *
 app = Flask(__name__)
 app.config.from_object('config')
 db = SQLAlchemy(app)
-
-# Models
 
 def _get_date():
     return datetime.datetime.now()
@@ -34,13 +32,20 @@ def index():
         if checkcomplete:
             return
 
-
         row = Tasks(tdtask=newtask,lastday=duedate,complete=checkcomplete)
         db.session.add(row)
             
         db.session.commit()
 
     return render_template("index.html", mytasks = alltasks, atform = atform)
+
+@app.route("/done/<int:id>")
+def done(id):
+    taskid = db.session.query(Tasks).filter_by(key=int(id)).first()
+    taskid.complete = True
+    db.session.commit()
+
+    return redirect(url_for("index"))
 
 if __name__ == "__main__":
     app.run(debug=True)
