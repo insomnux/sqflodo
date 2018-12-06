@@ -5,7 +5,7 @@
 {%block content %}
 <section class="newtask">
   <h2> Add a new task </h2>
-  <form id="new_task" action="{{ url_for('index') }}" accept-charset="UTF-8" method="post">
+  <form id="new_task" action="{{ url_for("index") }}" accept-charset="UTF-8" method="post">
     {{ atform.csrf_token }}
     <label for "add_new_task" style="display: none;">Add a new task</label>
     {{ atform.newtask }}
@@ -20,7 +20,7 @@
   <h3> Current tasks </h3>
   {{ message }}
   <article>
-    {% for mytask in mytasks %}
+    {% for mytask in mytasks|sort(attribute="lastday") %}
       <p class="task_text">&#10143; {{ mytask.tdtask }}</p>
       <p class="task_meta">Due date: <strong>{{ mytask.lastday }}</strong> |
       {% if mytask.complete == false %} <input type="checkbox" name="iscomplete" onclick='window.location.assign("{{ url_for("done", t_id=mytask.key) }}")'/><em>Mark as complete</em>{% else %}<em>Task completed</em>{% endif %}</p>

@@ -7,7 +7,7 @@ from wtforms.validators import DataRequired
 from flask import Flask, render_template, redirect, request, url_for
 
 app = Flask(__name__)
-app.config.from_object('config')
+app.config.from_object("config")
 db = SQLAlchemy(app)
 
 def _get_date():
@@ -52,6 +52,7 @@ def index():
         db.session.add(row)
 
         db.session.commit()
+        return redirect(url_for("index"))
 
     return render_template("index.html", mytasks=alltasks, atform=atform)
 
