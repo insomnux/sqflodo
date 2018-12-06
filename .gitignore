@@ -15,6 +15,7 @@
 flask
 __pycache__
 flask_session
+IGNORE
 
 # database
 tasks.db
